@@ -1,7 +1,6 @@
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-
 import javax.xml.crypto.dsig.XMLSignature;
 import javax.xml.crypto.dsig.XMLSignatureFactory;
 import javax.xml.crypto.dsig.dom.DOMValidateContext;
@@ -10,7 +9,7 @@ import java.io.FileInputStream;
 import java.security.KeyStore;
 import java.security.PublicKey;
 
-public class VerifySignature {
+public class ValidateSignature {
 
   //KEY STORE
   static String keyStoreName     = "src/main/resources/PublicKeys.jks";
@@ -86,7 +85,7 @@ public class VerifySignature {
 
     //VALIDATE SIGNATURE
     DOMValidateContext  valContext = new DOMValidateContext(publicKey, signatureNode);
-                        valContext.setIdAttributeNS((Element) signatureNode.getParentNode(),null,"Id");  //FIX
+                        valContext.setIdAttributeNS((Element) signatureNode.getParentNode(),null,"Id"); //FIX
     XMLSignatureFactory factory    = XMLSignatureFactory.getInstance("DOM");
     XMLSignature        signature  = factory.unmarshalXMLSignature(valContext);
     boolean             valid      = signature.validate(valContext);
@@ -95,4 +94,5 @@ public class VerifySignature {
     return valid;
 
   }
+
 }
