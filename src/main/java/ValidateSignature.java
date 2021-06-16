@@ -26,7 +26,7 @@ public class ValidateSignature {
     PublicKey publicKey = keyPair.getTrustedCertificate().getPublicKey();
 
     //VALIDATE SIGNATURE
-    Document document = XMLUtil.readXMLFromFile(fileXMLInput2);
+    Document document = XMLUtil.readXMLFromFile(fileXMLInput1);
     boolean  valid    = XMLUtil.validateSignatureUsingKey(document, publicKey);
 
     //DISPLAY RESULT
