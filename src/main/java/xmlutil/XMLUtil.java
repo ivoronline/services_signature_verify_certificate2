@@ -3,12 +3,10 @@ package xmlutil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-
 import javax.xml.crypto.dsig.XMLSignature;
 import javax.xml.crypto.dsig.XMLSignatureFactory;
 import javax.xml.crypto.dsig.dom.DOMValidateContext;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.security.Key;
 import java.security.KeyStore;
