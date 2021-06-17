@@ -7,14 +7,14 @@ import java.security.PublicKey;
 public class ValidateSignature {
 
   //KEY STORE
-  static String keyStoreName     = "src/main/resources/PublicKeys.jks";
+  static String keyStoreName     = "/PublicKeys.jks";
   static String keyStorePassword = "mypassword";
   static String keyStoreType     = "JKS";
   static String keyAlias         = "clientkeys1";
 
   //XML FILE
-  static String fileXMLInput1    = "src/main/resources/PersonSigned.xml";
-  static String fileXMLInput2    = "src/main/resources/PersonSignedWithKeyInfo.xml";
+  static String fileXMLInput1    = "/PersonSigned.xml";
+  static String fileXMLInput2    = "/PersonSignedWithKeyInfo.xml";
 
   //================================================================================
   // MAIN
