@@ -19,7 +19,7 @@ public class ValidateSignature {
   public static void main(String[] args) throws Exception {
 
     //GET PUBLIC KEY
-    PublicKey publicKey = UtilSignature.getPublicKeyFromKeyStore(keyStoreName, keyStorePassword, keyStoreType, keyAlias);
+    PublicKey publicKey = UtilKeys.getPublicKeyFromKeyStore(keyStoreName, keyStorePassword, keyStoreType, keyAlias);
 
     //VALIDATE SIGNATURE
     Document document = UtilXML.fileToDocument(fileXMLInput1);
