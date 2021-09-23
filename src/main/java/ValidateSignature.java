@@ -1,7 +1,4 @@
 import org.w3c.dom.Document;
-import xmlutil.XMLUtil;
-
-import java.security.KeyStore;
 import java.security.PublicKey;
 
 public class ValidateSignature {
@@ -22,12 +19,11 @@ public class ValidateSignature {
   public static void main(String[] args) throws Exception {
 
     //GET PUBLIC KEY
-    KeyStore.TrustedCertificateEntry keyPair = XMLUtil.getPublicKeyPair(keyStoreName, keyStorePassword, keyStoreType, keyAlias);
-    PublicKey publicKey = keyPair.getTrustedCertificate().getPublicKey();
+    PublicKey publicKey = UtilSignature.getPublicKeyFromKeyStore(keyStoreName, keyStorePassword, keyStoreType, keyAlias);
 
     //VALIDATE SIGNATURE
-    Document document = XMLUtil.readXMLFromFile(fileXMLInput1);
-    boolean  valid    = XMLUtil.validateSignatureUsingKey(document, publicKey);
+    Document document = UtilXML.fileToDocument(fileXMLInput1);
+    boolean  valid    = UtilSignature.validateSignatureUsingKey(document, publicKey);
 
     //DISPLAY RESULT
     System.out.println(valid);
